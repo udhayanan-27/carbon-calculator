@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Carbon Footprint Calculator</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+  <div class="calculator-card">
+    <h2>🌱 Carbon Footprint Calculator</h2>
+
+    <!-- Authentication Section (Visible when logged out) -->
+    <div id="authContainer">
+      <div class="tab-buttons">
+        <button id="loginTabBtn" class="tab-btn active" onclick="switchAuthTab('login')">Login</button>
+        <button id="registerTabBtn" class="tab-btn" onclick="switchAuthTab('register')">Register</button>
+      </div>
+
+      <!-- Login Form -->
+      <form id="loginForm" onsubmit="handleLogin(event)">
+        <label>Email Address</label>
+        <input type="email" id="loginEmail" placeholder="you@example.com" required>
+
+        <label>Password</label>
+        <input type="password" id="loginPassword" placeholder="••••••••" required>
+
+        <button type="submit">Sign In</button>
+      </form>
+
+      <!-- Register Form -->
+      <form id="registerForm" class="hidden" onsubmit="handleRegister(event)">
+        <label>Full Name</label>
+        <input type="text" id="regName" placeholder="John Doe" required>
+
+        <label>Email Address</label>
+        <input type="email" id="regEmail" placeholder="you@example.com" required>
+
+        <label>Password</label>
+        <input type="password" id="regPassword" placeholder="••••••••" required>
+
+        <button type="submit">Create Account</button>
+      </form>
+    </div>
+
+    <!-- Main Calculator App Section (Visible when logged in) -->
+    <div id="appContainer" class="hidden">
+      <div class="user-bar">
+        <span>Welcome, <strong id="userDisplayName">User</strong>!</span>
+        <button class="logout-btn" onclick="handleLogout()">Logout</button>
+      </div>
+
+      <form id="carbonForm" onsubmit="handleCalculate(event)">
+        <label>Monthly Electricity Usage (kWh):</label>
+        <input type="number" id="electricity" placeholder="e.g. 150" required min="0">
+
+        <label>Monthly Petrol Car Travel (km):</label>
+        <input type="number" id="petrolKm" placeholder="e.g. 300" required min="0">
+
+        <label>Diet Type:</label>
+        <select id="diet">
+          <option value="250">Meat Heavy</option>
+          <option value="180">Average / Balanced</option>
+          <option value="140">Vegetarian</option>
+          <option value="100">Vegan</option>
+        </select>
+
+        <button type="submit">Calculate Footprint</button>
+      </form>
+
+      <!-- Calculations Result & Chart -->
+      <div id="resultSection" class="hidden">
+        <h3>Your Monthly Footprint: <span id="totalOutput">0</span> kg CO₂e</h3>
+        <canvas id="emissionChart" width="400" height="200"></canvas>
+      </div>
+
+      <!-- Historical Logs -->
+      <div id="historySection">
+        <h3>Recent Calculation History</h3>
+        <ul id="historyList"></ul>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

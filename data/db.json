@@ -1,0 +1,52 @@
+{
+  "users": [
+    {
+      "id": "user_1791012248814_zql6zn",
+      "name": "Test User",
+      "email": "testuser@example.com",
+      "passwordHash": "$2a$10$p6GecsrL5QrTvFLEDXcaRuhTCuSpRYgSQWrqa5b8gSGUOeXU3K1wi"
+    },
+    {
+      "id": "user_1791012248906_kk3w4a",
+      "name": "History User",
+      "email": "history@example.com",
+      "passwordHash": "$2a$10$rOuPOnvzbN0t6dKZbSq8lulI3uW/5s4cBEGcs3qVlWpeLC5PnBoja"
+    },
+    {
+      "id": "user_1791013234863_4gwk1b",
+      "name": "Test User",
+      "email": "test_1791013234758_6r4q@example.com",
+      "passwordHash": "$2a$10$0Hfj4T4Q31/J9hPkPquvqO3ts45dUirw6ai08PB2bH/ZNbRPCa.ja"
+    },
+    {
+      "id": "user_1791013234958_koet8b",
+      "name": "History User",
+      "email": "history_1791013234879_1dpc@example.com",
+      "passwordHash": "$2a$10$SkqYpZ0LO39SzTae7OqiJeeKi.cuOD1ap5Wi4ETgVRpDnkB2GPLXm"
+    }
+  ],
+  "history": [
+    {
+      "id": "calc_1791012248911_vpsspm",
+      "userId": "user_1791012248906_kk3w4a",
+      "createdAt": "2026-10-03T07:24:08.911Z",
+      "emissions": {
+        "total": 222,
+        "electricityEmission": 42,
+        "transportEmission": 40,
+        "dietEmission": 140
+      }
+    },
+    {
+      "id": "calc_1791013234963_u43mir",
+      "userId": "user_1791013234958_koet8b",
+      "createdAt": "2026-10-03T07:40:34.963Z",
+      "emissions": {
+        "total": 222,
+        "electricityEmission": 42,
+        "transportEmission": 40,
+        "dietEmission": 140
+      }
+    }
+  ]
+}
